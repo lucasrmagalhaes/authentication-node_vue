@@ -1,2 +1,8 @@
-# authentication-node_vue
-Building Vue and Node Apps with Authentication
+***Instalação do Vue 2***
+```
+vue create frontend
+```
+
+```
+vue add vuetify
+```
