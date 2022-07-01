@@ -1,4 +1,4 @@
-***Instalação do Vue 2***
+***Vue.JS 2 Install***
 ```
 vue create frontend
 ```
@@ -29,4 +29,14 @@ http://localhost:3000
 
 ```
 npm install -g nodemon
+```
+
+***Front-end - Axios Install***
+```
+npm install axios --save
+```
+
+***Back-end: Cors Install***
+```
+npm install cors
 ```

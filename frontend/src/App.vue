@@ -1,11 +1,11 @@
 <template>
   <v-app>
-    <v-toobar app>
-    </v-toobar> 
+    <v-toolbar>
+    </v-toolbar> 
     
-    <v-content>
+    <v-main>
       <Messages />
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
