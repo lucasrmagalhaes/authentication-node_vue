@@ -3,30 +3,37 @@
 vue create frontend
 ```
 
+***Install vuetify***
 ```
 vue add vuetify
 ```
 
+***Remove eslint***
 ```
 npm remove @vue/cli-plugin-eslint
 ```
 
+***Init***
 ```
 npm init -y
 ```
 
+***express Install***
 ```
 npm install express --save
 ```
 
+***Runing server.js***
 ```
 node server.js
 ```
 
+***localhost***
 ```
 http://localhost:3000
 ```
 
+***Back-end - Nodemon Install***
 ```
 npm install -g nodemon
 ```
