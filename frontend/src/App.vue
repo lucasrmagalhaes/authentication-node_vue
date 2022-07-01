@@ -8,9 +8,7 @@
     
     <v-main>
       <br />
-      <NewMessage />
-      <br />
-      <Messages />
+      <router-view />
     </v-main>
   </v-app>
 </template>

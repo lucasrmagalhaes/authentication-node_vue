@@ -57,3 +57,8 @@ npm install body-parser
 ```
 "vuex": "<4"
 ```
+
+***Front-end: Vue Router Install***
+```
+"vue-router": "<4"
+```
