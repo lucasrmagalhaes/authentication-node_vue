@@ -1,16 +1,20 @@
 <template>
-    <div>
-        <h4 class="display-1">Messages</h4>
+    <v-flex sm8 offset-sm2>
+        <v-card>
+            <v-toolbar dark>
+                <v-toolbar-title>Messages</v-toolbar-title>
+            </v-toolbar>
 
-        <v-list>
-            <v-list-item v-for="message in messages" @click="">
-                <v-list-item-title 
-                    v-text="message"
-                    link
-                />
-            </v-list-item>
-        </v-list>
-    </div>
+            <v-list>
+                <v-list-item v-for="message in messages" @click="">
+                    <v-list-item-title 
+                        v-text="message"
+                        link
+                    />
+                </v-list-item>
+            </v-list>
+        </v-card>
+    </v-flex>
 </template>
 
 <script>
