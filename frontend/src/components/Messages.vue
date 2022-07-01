@@ -6,7 +6,10 @@
             </v-toolbar>
 
             <v-list>
-                <v-list-item v-for="message in $store.state.messages" @click="">
+                <v-list-item 
+                    v-for="(message, index) in $store.state.messages" 
+                    :to="'message/' + index"
+                >
                     <v-list-item-title 
                         v-text="message"
                         link

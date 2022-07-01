@@ -14,6 +14,10 @@ app.get('/messages', (req, res) => {
     res.send(messages);
 });
 
+app.get('/messages/:id', (req, res) => {
+    res.send(messages[req.params.id]);
+});
+
 app.post('/messages',  (req, res) => {
     let msg = req.body;
     console.log(msg);

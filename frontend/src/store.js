@@ -29,6 +29,9 @@ export default new Vuex.Store ({
             })).data;
             
             commit('newMessage', msg.message);
+        },
+        async getMessage({ commit }, id) {
+            return axios.get(`http://localhost:3000/messages/${id}`);
         }
     }
 });
