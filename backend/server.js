@@ -8,15 +8,18 @@ const port = 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
-app.get('/messages', (req, res) => {
-    const messages =  ["yes", "each", "messages"];
+var messages = ["yes", "each", "messages"];
 
+app.get('/messages', (req, res) => {
     res.send(messages);
 });
 
 app.post('/messages',  (req, res) => {
-    console.log(req.body);
-    res.json({});
+    let msg = req.body;
+    console.log(msg);
+    messages.push(msg.message);
+    res.json(msg);
+    console.log(messages);
 });
 
 app.listen(port, () => console.log('app running'));
