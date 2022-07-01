@@ -22,7 +22,6 @@ export default new Vuex.Store ({
             
             commit('updateMessages', messages);
         },
-
         async newMessage({ commit }, messageBody) {
             const msg = (await axios.post('http://localhost:3000/messages', { 
                 message: messageBody
@@ -32,6 +31,9 @@ export default new Vuex.Store ({
         },
         async getMessage({ commit }, id) {
             return axios.get(`http://localhost:3000/messages/${id}`);
-        }
+        },
+        async register({ commit }, registerData) {
+            await axios.post('http://localhost:3000/register', registerData);
+        },
     }
 });

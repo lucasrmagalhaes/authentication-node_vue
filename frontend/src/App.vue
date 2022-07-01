@@ -1,11 +1,17 @@
 <template>
-  <v-app>
-    <v-toolbar>
+  <v-app
+    dense
+    elevation="4"
+    flat
+    outlined
+  >
+    <v-app-bar app>
       <v-btn text to="/">Messages</v-btn>
       <v-btn text to="/NewMessage">New Message</v-btn>
       <v-spacer />
+      <v-btn text to="/Register">Register</v-btn>
       <v-btn text>Login</v-btn>
-    </v-toolbar>
+    </v-app-bar>
     
     <v-main>
       <br />
@@ -17,13 +23,15 @@
 <script>
 import Messages from './components/Messages';
 import NewMessage from './components/NewMessage';
+import Register from './components/Register';
 
 export default {
   name: 'App',
 
   components: {
     Messages,
-    NewMessage
+    NewMessage,
+    Register
   },
 
   data: () => ({
