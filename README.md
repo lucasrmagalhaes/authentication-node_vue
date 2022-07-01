@@ -26,3 +26,7 @@ node server.js
 ```
 http://localhost:3000
 ```
+
+```
+npm install -g nodemon
+```
