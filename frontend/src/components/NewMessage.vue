@@ -29,12 +29,9 @@ export default {
             messageBody: ""
         };
     },
-    async created() {
-        this.messages = (await axios.get('http://localhost:3000/messages')).data;
-    },
     methods: {
         submit() {
-            console.log(this.messageBody);
+            axios.post('http://localhost:3000/messages', { message: this.messageBody });
         }
     }
 }
