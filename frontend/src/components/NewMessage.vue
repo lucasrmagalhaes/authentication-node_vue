@@ -9,12 +9,12 @@
                 <v-container>
                     <v-layout>
                         <v-flex xs12 md4>
-                            <v-text-field label="Message" required />
+                            <v-text-field v-model="messageBody" label="Message" required />
                         </v-flex>
                     </v-layout>
                 </v-container>
 
-                <v-btn @click="" color="primary">Submit</v-btn>
+                <v-btn @click="submit" color="primary">Submit</v-btn>
             </v-form>
         </v-card>
     </v-flex>
@@ -26,11 +26,16 @@ import axios from 'axios';
 export default {
     data() {
         return { 
-            messages: ["hello", "hi", "its working"] 
+            messageBody: ""
         };
     },
     async created() {
         this.messages = (await axios.get('http://localhost:3000/messages')).data;
+    },
+    methods: {
+        submit() {
+            console.log(this.messageBody);
+        }
     }
 }
 </script>
