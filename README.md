@@ -45,3 +45,8 @@ npm install cors
 ```
 npm install body-parser
 ```
+
+***Front-end: Vuex Install***
+```
+"vuex": "<4"
+```
