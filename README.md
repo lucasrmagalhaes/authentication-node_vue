@@ -40,3 +40,8 @@ npm install axios --save
 ```
 npm install cors
 ```
+
+***Back-end: body-parser Install***
+```
+npm install body-parser
+```
