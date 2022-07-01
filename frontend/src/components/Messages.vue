@@ -6,7 +6,7 @@
             </v-toolbar>
 
             <v-list>
-                <v-list-item v-for="message in messages" @click="">
+                <v-list-item v-for="message in store.state.messages" @click="">
                     <v-list-item-title 
                         v-text="message"
                         link
@@ -19,19 +19,16 @@
 
 <script>
 import axios from 'axios';
+import store from '../store.js';
 
 export default {
     data() {
         return { 
-            messages: [] 
+            store
         };
     },
     async created() {
-        this.$root.$on('newMessage', message => {
-            this.messages.push(message);
-        });
-
-        this.messages = (await axios.get('http://localhost:3000/messages')).data;
+        store.state.messages = (await axios.get('http://localhost:3000/messages')).data;
     }
 }
 </script>
