@@ -11,6 +11,7 @@
       <v-spacer />
       <v-btn text v-if="!$store.state.token" to="/Register">Register</v-btn>
       <v-btn text v-if="!$store.state.token">Login</v-btn>
+      <v-btn text v-if="$store.state.token" @click="$store.commit('logout')">Logout</v-btn>
     </v-app-bar>
     
     <v-main>
