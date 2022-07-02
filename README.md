@@ -62,3 +62,8 @@ npm install body-parser
 ```
 "vue-router": "<4"
 ```
+
+***jsonwebtoken Install***
+```
+npm install jsonwebtoken
+```

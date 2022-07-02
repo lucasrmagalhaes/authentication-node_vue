@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-
+const jwt = require('jsonwebtoken');
 const app = express();
 const port = 3000;
 
@@ -36,11 +36,10 @@ app.post('/messages',  (req, res) => {
 app.post('/register',  (req, res) => {
     let registerData = req.body;
     let newIndex = users.push(registerData);
+    let userId = newIndex - 1;
+    let token = jwt.sign(userId, '123');
 
-    registerData.id = newIndex - 1;
-
-    console.log(users);
-    res.json(registerData);
+    res.json(token);
 });
 
 app.listen(port, () => console.log('app running'));
