@@ -10,10 +10,16 @@
                     v-for="(message, index) in $store.state.messages" 
                     :to="'message/' + index"
                 >
-                    <v-list-item-title 
-                        v-text="message"
-                        link
-                    />
+                    <v-list-item-content>
+                        <v-list-item-title 
+                            v-text="message.text"
+                            link
+                        />
+                        <v-list-item-subtitle 
+                            v-text="message.user"
+                            link
+                        />
+                    </v-list-item-content>
                 </v-list-item>
             </v-list>
         </v-card>

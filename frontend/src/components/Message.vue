@@ -6,7 +6,7 @@
             </v-toolbar>
         </v-card>
 
-        <v-card-text>{{ messageBody }}</v-card-text>
+        <v-card-text>{{ message.text }}</v-card-text>
     </v-flex>
 </template>
 
@@ -16,11 +16,11 @@ import axios from 'axios';
 export default {
     data() {
         return { 
-            messageBody: ""
+            message: ""
         };
     },
     async created() {
-        this.messageBody = (await this.$store.dispatch('getMessage', this.$route.params.id)).data;
+        this.message = (await this.$store.dispatch('getMessage', this.$route.params.id)).data;
     }
 }
 </script>

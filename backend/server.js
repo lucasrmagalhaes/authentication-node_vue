@@ -8,7 +8,14 @@ const port = 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
-var messages = ["yes", "each", "messages"];
+var messages = [
+    { user: "Lucas", text: "yes", },
+    { user: "Carla", text: "each" }
+];
+
+var users = [
+    { username: "Lucas", password: "1" }
+];
 
 app.get('/messages', (req, res) => {
     res.send(messages);
@@ -19,11 +26,21 @@ app.get('/messages/:id', (req, res) => {
 });
 
 app.post('/messages',  (req, res) => {
-    let msg = req.body;
-    console.log(msg);
-    messages.push(msg.message);
+    const userId = req.header('Authorization');
+    const user = users[userId];
+    let msg = { user: user.userName, text: req.body.message };
+    messages.push(msg);
     res.json(msg);
-    console.log(messages);
+});
+
+app.post('/register',  (req, res) => {
+    let registerData = req.body;
+    let newIndex = users.push(registerData);
+
+    registerData.id = newIndex - 1;
+
+    console.log(users);
+    res.json(registerData);
 });
 
 app.listen(port, () => console.log('app running'));
