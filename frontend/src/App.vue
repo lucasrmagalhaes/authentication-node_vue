@@ -9,8 +9,8 @@
       <v-btn text to="/">Messages</v-btn>
       <v-btn text to="/NewMessage">New Message</v-btn>
       <v-spacer />
-      <v-btn text to="/Register">Register</v-btn>
-      <v-btn text>Login</v-btn>
+      <v-btn text v-if="!$store.state.token" to="/Register">Register</v-btn>
+      <v-btn text v-if="!$store.state.token">Login</v-btn>
     </v-app-bar>
     
     <v-main>
@@ -34,8 +34,8 @@ export default {
     Register
   },
 
-  data: () => ({
-    //
-  }),
+  data: () => {
+    return {}
+  },
 };
 </script>
