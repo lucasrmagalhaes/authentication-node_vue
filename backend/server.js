@@ -26,7 +26,8 @@ app.get('/messages/:id', (req, res) => {
 });
 
 app.post('/messages',  (req, res) => {
-    const userId = req.header('Authorization');
+    const token = req.header('Authorization');
+    const userId = jwt.decode(token, '123');
     const user = users[userId];
     let msg = { user: user.userName, text: req.body.message };
     messages.push(msg);
